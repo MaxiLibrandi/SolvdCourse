@@ -1,0 +1,27 @@
+2020-04-12 18:19:17 INFO  Runner:25 - Profile type: PERSONAL | Username: maxilibrandi | mail: maximolibrandi@hotmail.com | phone number+5492281585831 | name: Maximo | last name: Librandi
+2020-04-12 18:19:17 INFO  Runner:29 - Profile type: PERSONAL | Username: gonza_librandi | mail: gonzalibrandi@gmail.com | phone number+5492281580621 | name: Gonzalo | last name: Librandi
+2020-04-12 18:19:17 INFO  Runner:33 - Profile type: BUSINESS | Username: solvdINC | mail: solvd@gmail.com | phone number+542494505050 | business name: Solvd INC. | category: Software | contact mail: contact@solvd.com
+2020-04-12 18:19:17 ERROR Runner:66 - BUSINESS PROFILE CAN'T COMMENT PERSONAL_POST
+2020-04-12 18:19:17 INFO  Runner:97 - THROW NOT PERSONAL POST FOUND EXCEPTION - POST IS ADVERTISINGPOST
+2020-04-12 18:19:17 ERROR Runner:101 - com.solvd.socialNetwork.exception.NotPersonalPostFoundException
+2020-04-12 18:19:17 INFO  Runner:104 - THROW NOT ADVERTISING POST FOUND EXCEPTION - POST IS PERSONALPOST
+2020-04-12 18:19:17 ERROR Runner:108 - com.solvd.socialNetwork.exception.NotAdvertisingPostFoundException
+2020-04-12 18:19:17 INFO  Runner:111 - CREATE CONVERSARTION BETWEEN MAXIMO AND GONZALO
+2020-04-12 18:19:17 INFO  Runner:118 - CREATE CONVERSATION BETWEEN MAXIMO AND SOLVD
+2020-04-12 18:19:17 INFO  Runner:125 - THROW PERSONAL CONVERSATION ALREADY EXISTS EXCEPTION - MAXIMO AND SOLVD ALREADY HAVE CONVERSATION
+2020-04-12 18:19:17 ERROR Runner:129 - com.solvd.socialNetwork.exception.PersonalConversationAlreadyExistsException
+2020-04-12 18:19:17 INFO  Runner:132 - SEND MESSAGE FROM MAXIMO TO SOLVD
+2020-04-12 18:19:17 INFO  Runner:139 - SEND MESSAGE FROM SOLVD TO MAXIMO
+2020-04-12 18:19:17 INFO  Runner:146 - THROW GROUP CONVERSATION CREATION EXCEPTION - PARTICIPANTS IS EMPTY
+2020-04-12 18:19:17 ERROR Runner:151 - com.solvd.socialNetwork.exception.GroupConversationCreationException
+2020-04-12 18:19:17 INFO  Runner:154 - CREATE GROUP CONVERSATION WITH MAXIMO AS PARTICIPANT
+2020-04-12 18:19:17 INFO  Runner:162 - THROW CONVERSATION NOT FOUND EXCEPTION - SOLVD AND GONZALO HAVEN'T GOT A CONVERSATION
+2020-04-12 18:19:17 ERROR Runner:166 - com.solvd.socialNetwork.exception.ConversationNotFoundException
+2020-04-12 18:19:17 INFO  Runner:169 - ADD PARTICIPANT TO GROUP CONVERSATION
+2020-04-12 18:19:17 INFO  Runner:176 - THROW CONVERSATION NOT FOUND EXCEPTION - THERE'S NOT A GROUP CONVERSATION NAMED 'COURSE'
+2020-04-12 18:19:17 ERROR Runner:180 - com.solvd.socialNetwork.exception.ConversationNotFoundException
+2020-04-12 18:19:17 INFO  Runner:183 - SEND MESSAGE TO GROUP CONVERSATION
+2020-04-12 18:19:17 INFO  Runner:190 - GET RATINGS OF USERS
+2020-04-12 18:19:17 INFO  Runner:191 - Rating maximo:2.7
+2020-04-12 18:19:17 INFO  Runner:192 - Rating gonzalo:1.3
+2020-04-12 18:19:17 INFO  Runner:193 - Rating solvd:1.4
