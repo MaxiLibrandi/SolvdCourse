@@ -6,11 +6,13 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.solvd.socialNetwork.enums.Profiles;
 import com.solvd.socialNetwork.exception.ConversationNotFoundException;
 import com.solvd.socialNetwork.exception.GroupConversationCreationException;
 import com.solvd.socialNetwork.exception.NotAdvertisingPostFoundException;
 import com.solvd.socialNetwork.exception.NotPersonalPostFoundException;
 import com.solvd.socialNetwork.exception.PersonalConversationAlreadyExistsException;
+import com.solvd.socialNetwork.filter.IGenericFilter;
 import com.solvd.socialNetwork.post.*;
 import com.solvd.socialNetwork.profile.*;
 
@@ -191,5 +193,34 @@ public class Runner {
 		LOGGER.info("Rating maximo:" + maximo.getRating());
 		LOGGER.info("Rating gonzalo:" + gonzalo.getRating());
 		LOGGER.info("Rating solvd:" + solvd.getRating());
+		
+		// LAMBDA FUNCTIONS
+		
+		IGenericFilter<Profile,LocalDate> filterProfileByEqualDate = (profile, objectiveDate) -> {
+			return profile.getProfileDate().equals(objectiveDate);
+		};
+		
+		IGenericFilter<Profile,String> filterProfileByEqualName = (profile, objectiveName) -> {
+			return profile.getProfileName().equals(objectiveName);
+		};
+		
+		IGenericFilter<Post,LocalDate> filterPostByEqualDate = (post, objectiveDate) -> {
+			return post.getPublishDate().equals(objectiveDate);
+		};
+		
+		IGenericFilter<Post,Integer> filterPostByLikesAmount = (post, likesAmount) -> {
+			return post.getLikesCount() >= likesAmount;
+		};
+		
+		IGenericFilter<Profile,Profiles> filter = (profile, type) -> {
+			return profile.getProfileType().equals(type);
+		};
+		
+		LOGGER.info("Testing lambda functions..");
+		LOGGER.info("Gonzalo profile date is 2002/08/30: " + filterProfileByEqualDate.satisfy(gonzalo, LocalDate.of(2002,8,30)));
+		LOGGER.info("Maximo profile name is Maxi Librandi: " + filterProfileByEqualName.satisfy(maximo, "Maxi Librandi"));
+		LOGGER.info("Maximo first post date is 2020/04/17: " + filterPostByEqualDate.satisfy(maximoFirstPersonalPost, LocalDate.of(2020,4,17)));
+		LOGGER.info("Maximo first post has >= 2 likes: " + filterPostByLikesAmount.satisfy(maximoFirstPersonalPost, 2));
+		LOGGER.info("Solvd profile is of type PERSONAL: " + filter.satisfy(solvd, Profiles.PERSONAL));		
 	}
 }
