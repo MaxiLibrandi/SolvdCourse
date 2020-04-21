@@ -14,7 +14,6 @@ public class RunnerCountWordsOcurrence {
 
 	public static void main (String[] args) {
 		
-		HashMap<String,Integer> ocurrences = new HashMap<String, Integer>();
 		
 		String text = null;
 		
@@ -23,6 +22,15 @@ public class RunnerCountWordsOcurrence {
 		} catch (IOException e) {
 			LOGGER.error(e);
 		}
+		
+		String[] separators = {".", "," , ":" , ";" , "(" , ")" , "-", "[", "]", "{", "}", "\""};
+		String[] replaceChar = {" "," "," "," "," "," "," "," "," "," "," "," "};
+		
+		text = StringUtils.replaceEach(text,separators,replaceChar);
+		
+		//text = text.replaceAll("\\p{P}"," "); USING STRING METHOD replaceAll();
+		
+		HashMap<String,Integer> ocurrences = new HashMap<String, Integer>();
 		
 		for (String word : StringUtils.split(text,' ')) {			
 			ocurrences.put(word = StringUtils.upperCase(word),(ocurrences.containsKey(word)) ? ocurrences.get(word) + 1 : 1);
