@@ -36,7 +36,7 @@ public class Runner {
 	
 		PersonalPost maximoFirstPersonalPost = new PersonalPost("maxilibrandi","Hello Facebook i'm new using it!");
 		
-		if (maximo.getProfileType().canPostPersonalPosts()) {
+		if (maximo.getProfileType().getCanPostPersonalPosts()) {
 			try {
 				maximo.addPost(maximoFirstPersonalPost);
 			} catch (NotPersonalPostFoundException e) {
@@ -44,25 +44,25 @@ public class Runner {
 			}
 		}
 		
-		if(gonzalo.getProfileType().canLikePosts() && maximoFirstPersonalPost.getContentType().canBeLiked()) {
+		if(gonzalo.getProfileType().getCanLikePosts() && maximoFirstPersonalPost.getContentType().getCanBeLiked()) {
 			maximoFirstPersonalPost.addLike(gonzalo);
 		}else {
 			LOGGER.error(gonzalo.getProfileType() + " PROFILE CAN'T LIKE " + maximoFirstPersonalPost.getContentType());
 		}
 		
-		if(gonzalo.getProfileType().canSharePosts() && maximoFirstPersonalPost.getContentType().canBeShared()) {
+		if(gonzalo.getProfileType().getCanSharePosts() && maximoFirstPersonalPost.getContentType().getCanBeShared()) {
 			maximoFirstPersonalPost.addShare(gonzalo);
 		}else {
 			LOGGER.error(gonzalo.getProfileType() + " PROFILE CAN'T SHARE " + maximoFirstPersonalPost.getContentType());
 		}
 		
-		if(solvd.getProfileType().canLikePosts() && maximoFirstPersonalPost.getContentType().canBeLiked()) {
+		if(solvd.getProfileType().getCanLikePosts() && maximoFirstPersonalPost.getContentType().getCanBeLiked()) {
 			maximoFirstPersonalPost.addLike(solvd);
 		}else {
 			LOGGER.error(solvd.getProfileType() + " PROFILE CAN'T LIKE " + maximoFirstPersonalPost.getContentType());
 		}
 		
-		if(solvd.getProfileType().canCommentPosts() && maximoFirstPersonalPost.getContentType().canBeCommented()) {
+		if(solvd.getProfileType().getCanCommentPosts() && maximoFirstPersonalPost.getContentType().getCanBeCommented()) {
 			maximoFirstPersonalPost.addComment(solvd, "Nice!");
 		}else {
 			LOGGER.error(solvd.getProfileType() + " PROFILE CAN'T COMMENT " + maximoFirstPersonalPost.getContentType());

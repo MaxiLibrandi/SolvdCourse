@@ -18,23 +18,23 @@ public enum Profiles {
 		this.canSharePosts = canSharePosts;
 	}
 	
-	public Boolean canPostPersonalPosts() {
+	public Boolean getCanPostPersonalPosts() {
 		return canPostPersonalPosts;
 	}
 	
-	public Boolean canPostAdvertisingPosts() {
+	public Boolean getCanPostAdvertisingPosts() {
 		return canPostAdvertisingPosts;
 	}
 	
-	public Boolean canLikePosts() {
+	public Boolean getCanLikePosts() {
 		return canLikePosts;
 	}
 	
-	public Boolean canCommentPosts() {
+	public Boolean getCanCommentPosts() {
 		return canCommentPosts;
 	}
 	
-	public Boolean canSharePosts() {
+	public Boolean getCanSharePosts() {
 		return canSharePosts;
 	}
 }

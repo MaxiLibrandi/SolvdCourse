@@ -20,23 +20,23 @@ public enum Content {
 		this.canBeEdited = canBeEdited;
 	}
 	
-	public Boolean canBeLiked() {
+	public Boolean getCanBeLiked() {
 		return canBeLiked;
 	}
 	
-	public Boolean canBeCommented() {
+	public Boolean getCanBeCommented() {
 		return canBeCommented;
 	}
 	
-	public Boolean canBeShared() {
+	public Boolean getCanBeShared() {
 		return canBeShared;
 	}
 	
-	public Boolean canBeRemoved() {
+	public Boolean getCanBeRemoved() {
 		return canBeRemoved;
 	}
 	
-	public Boolean canBeEdited() {
+	public Boolean getCanBeEdited() {
 		return canBeEdited;
 	}
 }
