@@ -68,7 +68,6 @@ public abstract class Profile {
 	}
 	
 	public Boolean createPersonalConversation(Profile userTo, String message) throws PersonalConversationAlreadyExistsException{
-		//LOOK FOR THE CONVERSATION, IF EXISTS, THROW EXCEPTION
 		/*
 		for(Conversation c : conversationHistory) {
 			if(c instanceof PersonalConversation && (((PersonalConversation)c).getUserTo().equals(userTo) || ((PersonalConversation)c).getUserFrom().equals(userTo))){
@@ -76,6 +75,7 @@ public abstract class Profile {
 			}
 		}
 		*/
+		//LOOK FOR THE CONVERSATION, IF EXISTS, THROW EXCEPTION
 		if (conversationHistory.stream().anyMatch(c -> c instanceof PersonalConversation && (((PersonalConversation)c).getUserTo().equals(userTo) || ((PersonalConversation)c).getUserFrom().equals(userTo)))){
 			throw new PersonalConversationAlreadyExistsException();
 		}
@@ -106,20 +106,28 @@ public abstract class Profile {
 	}
 	
 	public Boolean sendMessageToPersonalConversation(Profile userTo, String message) throws ConversationNotFoundException {
+		/*
 		for(Conversation c : conversationHistory) {
 			if(c instanceof PersonalConversation && (((PersonalConversation)c).getUserTo().equals(userTo) || ((PersonalConversation)c).getUserFrom().equals(userTo))){
 				return c.addMessage(message);
 			}
 		}
+		*/
+		if(conversationHistory.stream().filter(c -> c instanceof PersonalConversation && (((PersonalConversation)c).getUserTo().equals(userTo) || ((PersonalConversation)c).getUserFrom().equals(userTo))).map(c -> c.addMessage(message)).count() > 0)
+			return true;
 		throw new ConversationNotFoundException();
 	}
 	
 	public Boolean sendMessageToGroupConversation(String name, String message) throws ConversationNotFoundException {
+		/*
 		for(Conversation c : conversationHistory) {
 			if(c instanceof GroupConversation && ((GroupConversation)c).getName().equals(name)) {
 				return c.addMessage(message);
 			}
 		}
+		*/
+		if(conversationHistory.stream().filter(c -> c instanceof GroupConversation && ((GroupConversation)c).getName().equals(name)).map(c -> c.addMessage(message)).count() > 0)
+			return true;
 		throw new ConversationNotFoundException();
 	}
 
