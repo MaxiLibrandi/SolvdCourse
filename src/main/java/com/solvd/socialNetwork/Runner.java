@@ -222,5 +222,8 @@ public class Runner {
 		LOGGER.info("Maximo first post date is 2020/04/17: " + filterPostByEqualDate.satisfy(maximoFirstPersonalPost, LocalDate.of(2020,4,17)));
 		LOGGER.info("Maximo first post has >= 2 likes: " + filterPostByLikesAmount.satisfy(maximoFirstPersonalPost, 2));
 		LOGGER.info("Solvd profile is of type PERSONAL: " + filter.satisfy(solvd, Profiles.PERSONAL));		
+		
+		
+		System.out.println("Test: "+ maximo.getLikesReceived());
 	}
 }
