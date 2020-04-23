@@ -1,6 +1,33 @@
-2020-04-22 18:01:36 INFO  MyThread:26 - Thread TH1 got connection Connection 1
-2020-04-22 18:01:36 INFO  MyThread:26 - Thread TH3 got connection Connection 3
-2020-04-22 18:01:36 INFO  MyThread:26 - Thread TH2 got connection Connection 2
-2020-04-22 18:01:36 INFO  MyThread:26 - Thread TH4 got connection Connection 4
-2020-04-22 18:01:36 INFO  MyThread:26 - Thread TH5 got connection Connection 5
-2020-04-22 18:01:46 INFO  RunnerConnectionPool:35 - Not all threads finished
+2020-04-23 15:37:15 INFO  Runner:27 - Profile type: PERSONAL | Username: maxilibrandi | mail: maximolibrandi@hotmail.com | phone number+5492281585831 | name: Maximo | last name: Librandi
+2020-04-23 15:37:15 INFO  Runner:31 - Profile type: PERSONAL | Username: gonza_librandi | mail: gonzalibrandi@gmail.com | phone number+5492281580621 | name: Gonzalo | last name: Librandi
+2020-04-23 15:37:15 INFO  Runner:35 - Profile type: BUSINESS | Username: solvdINC | mail: solvd@gmail.com | phone number+542494505050 | business name: Solvd INC. | category: Software | contact mail: contact@solvd.com
+2020-04-23 15:37:15 ERROR Runner:68 - BUSINESS PROFILE CAN'T COMMENT PERSONAL_POST
+2020-04-23 15:37:15 INFO  Runner:99 - THROW NOT PERSONAL POST FOUND EXCEPTION - POST IS ADVERTISINGPOST
+2020-04-23 15:37:15 ERROR Runner:103 - com.solvd.socialNetwork.exception.NotPersonalPostFoundException
+2020-04-23 15:37:15 INFO  Runner:106 - THROW NOT ADVERTISING POST FOUND EXCEPTION - POST IS PERSONALPOST
+2020-04-23 15:37:15 ERROR Runner:110 - com.solvd.socialNetwork.exception.NotAdvertisingPostFoundException
+2020-04-23 15:37:15 INFO  Runner:113 - CREATE CONVERSARTION BETWEEN MAXIMO AND GONZALO
+2020-04-23 15:37:15 INFO  Runner:120 - CREATE CONVERSATION BETWEEN MAXIMO AND SOLVD
+2020-04-23 15:37:15 INFO  Runner:127 - THROW PERSONAL CONVERSATION ALREADY EXISTS EXCEPTION - MAXIMO AND SOLVD ALREADY HAVE CONVERSATION
+2020-04-23 15:37:15 ERROR Runner:131 - com.solvd.socialNetwork.exception.PersonalConversationAlreadyExistsException
+2020-04-23 15:37:15 INFO  Runner:134 - SEND MESSAGE FROM MAXIMO TO SOLVD
+2020-04-23 15:37:15 INFO  Runner:141 - SEND MESSAGE FROM SOLVD TO MAXIMO
+2020-04-23 15:37:15 INFO  Runner:148 - THROW GROUP CONVERSATION CREATION EXCEPTION - PARTICIPANTS IS EMPTY
+2020-04-23 15:37:15 ERROR Runner:153 - com.solvd.socialNetwork.exception.GroupConversationCreationException
+2020-04-23 15:37:15 INFO  Runner:156 - CREATE GROUP CONVERSATION WITH MAXIMO AS PARTICIPANT
+2020-04-23 15:37:15 INFO  Runner:164 - THROW CONVERSATION NOT FOUND EXCEPTION - SOLVD AND GONZALO HAVEN'T GOT A CONVERSATION
+2020-04-23 15:37:15 ERROR Runner:168 - com.solvd.socialNetwork.exception.ConversationNotFoundException
+2020-04-23 15:37:15 INFO  Runner:171 - ADD PARTICIPANT TO GROUP CONVERSATION
+2020-04-23 15:37:15 INFO  Runner:178 - THROW CONVERSATION NOT FOUND EXCEPTION - THERE'S NOT A GROUP CONVERSATION NAMED 'COURSE'
+2020-04-23 15:37:15 ERROR Runner:182 - com.solvd.socialNetwork.exception.ConversationNotFoundException
+2020-04-23 15:37:15 INFO  Runner:185 - SEND MESSAGE TO GROUP CONVERSATION
+2020-04-23 15:37:15 INFO  Runner:192 - GET RATINGS OF USERS
+2020-04-23 15:37:15 INFO  Runner:193 - Rating maximo:2.7
+2020-04-23 15:37:15 INFO  Runner:194 - Rating gonzalo:1.3
+2020-04-23 15:37:15 INFO  Runner:195 - Rating solvd:1.4
+2020-04-23 15:37:15 INFO  Runner:219 - Testing lambda functions..
+2020-04-23 15:37:15 INFO  Runner:220 - Gonzalo profile date is 2002/08/30: true
+2020-04-23 15:37:15 INFO  Runner:221 - Maximo profile name is Maxi Librandi: false
+2020-04-23 15:37:15 INFO  Runner:222 - Maximo first post date is 2020/04/17: false
+2020-04-23 15:37:15 INFO  Runner:223 - Maximo first post has >= 2 likes: true
+2020-04-23 15:37:15 INFO  Runner:224 - Solvd profile is of type PERSONAL: false

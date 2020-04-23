@@ -3,6 +3,7 @@ package com.solvd.socialNetwork.profile;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import com.solvd.socialNetwork.conversation.*;
 import com.solvd.socialNetwork.enums.Profiles;
@@ -126,8 +127,10 @@ public abstract class Profile {
 			}
 		}
 		*/
-		if(conversationHistory.stream().filter(c -> c instanceof GroupConversation && ((GroupConversation)c).getName().equals(name)).map(c -> c.addMessage(message)).count() > 0)
-			return true;
+		Optional<Conversation> conv = conversationHistory.stream().filter(c -> c instanceof GroupConversation && ((GroupConversation)c).getName().equals(name)).findAny();
+		if(!conv.isEmpty()) {
+			return conv.get().addMessage(message);
+		}
 		throw new ConversationNotFoundException();
 	}
 
