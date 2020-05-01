@@ -93,9 +93,10 @@ public abstract class Profile {
 	}
 	
 	public Boolean sendMessageToGroupConversation(String name, String message) throws ConversationNotFoundException {
-		Optional<Conversation> conv = conversationHistory.stream().filter(c -> c instanceof GroupConversation && ((GroupConversation)c).getName().equals(name)).findAny();
-		if(!conv.isEmpty()) {
-			return conv.get().addMessage(message);
+		for(Conversation c : conversationHistory) {
+			if(c instanceof GroupConversation && ((GroupConversation)c).getName().equals(name)) {
+				return c.addMessage(message);
+			}
 		}
 		throw new ConversationNotFoundException();
 	}
