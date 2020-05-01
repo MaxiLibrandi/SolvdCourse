@@ -1,4 +1,4 @@
-package com.solvd.linkedList;
+package com.solvd.socialNetwork.linkedList;
 
 public class LinkedList {
 	private Node head;

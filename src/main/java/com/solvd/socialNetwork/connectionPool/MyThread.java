@@ -1,4 +1,4 @@
-package com.solvd.connectionPool;
+package com.solvd.socialNetwork.connectionPool;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -25,7 +25,7 @@ public class MyThread implements Runnable{
 		
 		LOGGER.info("Thread " + name + " got connection " + myConnection);
 		
-		/*
+		
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
@@ -33,6 +33,6 @@ public class MyThread implements Runnable{
 		}
 		
 		cp.releaseConnection(myConnection);
-		*/
+		
 	}
 }

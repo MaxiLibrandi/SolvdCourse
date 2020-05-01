@@ -54,13 +54,6 @@ public abstract class Profile {
 	}
 	
 	public Integer getLikesReceived() {
-		/*
-		Integer sum = 0;
-		for(Post p : postsDone) {
-			sum += p.getLikesCount();
-		}
-		return sum;
-		*/
 		return postsDone.stream().mapToInt(p -> p.getLikesCount()).sum();
 	}
 	
@@ -69,13 +62,6 @@ public abstract class Profile {
 	}
 	
 	public Boolean createPersonalConversation(Profile userTo, String message) throws PersonalConversationAlreadyExistsException{
-		/*
-		for(Conversation c : conversationHistory) {
-			if(c instanceof PersonalConversation && (((PersonalConversation)c).getUserTo().equals(userTo) || ((PersonalConversation)c).getUserFrom().equals(userTo))){
-				throw new PersonalConversationAlreadyExistsException();
-			}
-		}
-		*/
 		//LOOK FOR THE CONVERSATION, IF EXISTS, THROW EXCEPTION
 		if (conversationHistory.stream().anyMatch(c -> c instanceof PersonalConversation && (((PersonalConversation)c).getUserTo().equals(userTo) || ((PersonalConversation)c).getUserFrom().equals(userTo)))){
 			throw new PersonalConversationAlreadyExistsException();
@@ -93,12 +79,6 @@ public abstract class Profile {
 		}
 		GroupConversation c = new GroupConversation(name, this);
 		c.addMessage(message);
-		/*
-		for (Profile p: participants) {
-			c.addParticipant(p);
-			p.addConversationToHistory(c);
-		}
-		*/
 		participants.stream().forEach(p -> {
 			c.addParticipant(p);
 			p.addConversationToHistory(c);
@@ -107,26 +87,12 @@ public abstract class Profile {
 	}
 	
 	public Boolean sendMessageToPersonalConversation(Profile userTo, String message) throws ConversationNotFoundException {
-		/*
-		for(Conversation c : conversationHistory) {
-			if(c instanceof PersonalConversation && (((PersonalConversation)c).getUserTo().equals(userTo) || ((PersonalConversation)c).getUserFrom().equals(userTo))){
-				return c.addMessage(message);
-			}
-		}
-		*/
 		if(conversationHistory.stream().filter(c -> c instanceof PersonalConversation && (((PersonalConversation)c).getUserTo().equals(userTo) || ((PersonalConversation)c).getUserFrom().equals(userTo))).map(c -> c.addMessage(message)).count() > 0)
 			return true;
 		throw new ConversationNotFoundException();
 	}
 	
 	public Boolean sendMessageToGroupConversation(String name, String message) throws ConversationNotFoundException {
-		/*
-		for(Conversation c : conversationHistory) {
-			if(c instanceof GroupConversation && ((GroupConversation)c).getName().equals(name)) {
-				return c.addMessage(message);
-			}
-		}
-		*/
 		Optional<Conversation> conv = conversationHistory.stream().filter(c -> c instanceof GroupConversation && ((GroupConversation)c).getName().equals(name)).findAny();
 		if(!conv.isEmpty()) {
 			return conv.get().addMessage(message);

@@ -1,4 +1,4 @@
-package com.solvd.connectionPool;
+package com.solvd.socialNetwork.connectionPool;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;;
@@ -6,27 +6,34 @@ import java.util.concurrent.LinkedBlockingQueue;;
 public class ConnectionPool {
 	private static ConnectionPool cp;
 	private BlockingQueue<String> connections;
+	private Integer connectionsCount;
 	public static final Integer POOL_SIZE = 5;
 	
 	private ConnectionPool(){
-		init();
+		connections = new LinkedBlockingQueue<String>(POOL_SIZE);
+		connectionsCount = 0;
 	};
 	
 	public static synchronized ConnectionPool getInstance(){
 		if(cp == null){
-			cp = new ConnectionPool();
+			synchronized (ConnectionPool.class){ 
+				if(cp == null)
+				{
+					cp = new ConnectionPool();
+				}
+			}
 		}
 		return cp;
 	}
 	
-	private void init() {
-		connections = new LinkedBlockingQueue<String>(POOL_SIZE);
-		for(int i = 0; i < POOL_SIZE ; i++) {
-			connections.add("Connection " + (i+1));
-		}
+	private void initConnection() {
+		connections.add("Connection " + (++connectionsCount));
 	}
 
 	public String getConnection() throws InterruptedException {
+		if(connections.size() == 0 && connectionsCount < POOL_SIZE ) {
+			initConnection();
+		}
 		return connections.take();
 	}
 	

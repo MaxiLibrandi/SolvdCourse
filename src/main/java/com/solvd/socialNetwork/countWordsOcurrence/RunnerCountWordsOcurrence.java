@@ -1,4 +1,4 @@
-package com.solvd.countWordsOcurrence;
+package com.solvd.socialNetwork.countWordsOcurrence;
 
 import java.io.File;
 import java.io.IOException;
@@ -27,8 +27,6 @@ public class RunnerCountWordsOcurrence {
 		String[] replaceChar = {" "," "," "," "," "," "," "," "," "," "," "," "};
 		
 		text = StringUtils.replaceEach(text,separators,replaceChar);
-		
-		//text = text.replaceAll("\\p{P}"," "); USING STRING METHOD replaceAll();
 		
 		HashMap<String,Integer> ocurrences = new HashMap<String, Integer>();
 		

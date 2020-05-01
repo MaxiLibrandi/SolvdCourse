@@ -1,4 +1,4 @@
-package com.solvd.connectionPool;
+package com.solvd.socialNetwork.connectionPool;
 
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;

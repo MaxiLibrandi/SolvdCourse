@@ -1,4 +1,4 @@
-package com.solvd.linkedList;
+package com.solvd.socialNetwork.linkedList;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
