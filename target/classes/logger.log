@@ -1,8 +1,0 @@
-2020-05-01 18:40:40 INFO  MyThread:26 - Thread TH1 got connection Connection 1
-2020-05-01 18:40:40 INFO  MyThread:26 - Thread TH6 got connection Connection 3
-2020-05-01 18:40:40 INFO  MyThread:26 - Thread TH4 got connection Connection 2
-2020-05-01 18:40:40 INFO  MyThread:26 - Thread TH2 got connection Connection 4
-2020-05-01 18:40:40 INFO  MyThread:26 - Thread TH7 got connection Connection 1
-2020-05-01 18:40:42 INFO  MyThread:26 - Thread TH5 got connection Connection 1
-2020-05-01 18:40:42 INFO  MyThread:26 - Thread TH3 got connection Connection 3
-2020-05-01 18:40:44 INFO  RunnerConnectionPool:33 - All threads finished
