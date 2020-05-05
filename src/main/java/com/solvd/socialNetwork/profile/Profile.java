@@ -3,7 +3,6 @@ package com.solvd.socialNetwork.profile;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import com.solvd.socialNetwork.conversation.*;
 import com.solvd.socialNetwork.enums.Profiles;
